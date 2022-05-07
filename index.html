@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working on Tables</title>
+
+    <link rel="stylesheet" href="Sass/styles.css">
+</head>
+<body>
+
+    <div class="styling-yellow"></div>
+    <div class="styling-red"></div>
+    <div class="styling-green"></div>
+
+    </div>
+
+    <div class="container">
+        <div class="display-container">
+            <table class="table">
+                <thead>
+                    <th>Item</th>
+                    <th class="middle-col">Qty</th>
+                    <th>Date of Expiry</th>
+                    <th class="rightmost-col">Consumed?</th>
+                </thead>
+                <tbody id="table-content">
+                    
+                </tbody>
+               
+            </table>
+        
+        </div>
+    
+        <div class="insert-container">
+                <div class="details">
+                     <input type="search" name="" id="item-name" placeholder="Enter Item Name">
+                     <img src="Images/shopping-bag.png" alt="shopping cart items">
+                </div>
+
+                <div class="details">
+                <input type="date" name="" id="doe" placeholder="Enter Date">
+                <img src="Images/calendar.png" alt="calender">
+                </div>
+
+                <div class="details">
+                     <div>
+                        <input type="number" name="" id="qty-no" placeholder="Enter Quantity">
+                        <img src="Images/data-management.png" alt="">
+                     </div>
+                     <button id="add">
+                         <img src="Images/plus-sign.png" alt="">
+                     </button>
+                </div>
+        </div>
+    
+    </div>
+
+    
+    <script src="index.js"></script>
+
+</body>
+</html>
