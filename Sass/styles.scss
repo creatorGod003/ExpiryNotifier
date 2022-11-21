@@ -139,3 +139,16 @@ body{
     background-color: #FF5757;
 }
 
+.clearBtn{
+    color: White;
+    padding:1rem;
+    margin-left: auto;
+    margin-right:auto;
+    display : block;
+    background-color: $bgcolor;
+    border-radius : 10px;
+    outline: none;
+    border:none;
+    cursor:pointer;
+}
+
