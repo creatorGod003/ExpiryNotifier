@@ -106,8 +106,6 @@ function highlightRows(){
 
 function colorIt(val,i, arr){
 
-  console.log(val);
-
     let color = "";
     let itemMonth = new Date(val.date).getMonth();
     let currentMonth = new Date().getMonth();
@@ -117,11 +115,11 @@ function colorIt(val,i, arr){
     }
     if(new Date(val.date)>=new Date()){
 
-      document.getElementById("table-content").innerHTML += `<tr class="row" style="background-color:${color};">
+      document.getElementById("table-content").innerHTML += `<tr class="row" id="row${i}" style="background-color:${color};">
       <td>${val.item}</td>
-      <td class="middle-col ">${val.qty}</td>
+      <td id="middle-col${i}">${val.qty}</td>
       <td>${val.date}</td>
-      <td class="rightmost-col" ><input type="checkbox" id=${"val"+i} ></td>
+      <td><button id="RmvQty${i}" class="rmvqty" style="padding:8px;border-radius:50%;font-size:20px;font-weight: bolder;">-</button></td>
       </tr>`;
 
     }
@@ -129,10 +127,42 @@ function colorIt(val,i, arr){
       arr.splice(i,1);
     }
     
-
-    console.log(i);
 }
 
+var removeQty = document.getElementsByClassName('rmvqty');
+
+ for(var i=0;i<removeQty.length;i++){
+
+  removeQty[i].addEventListener('click', getId);
+
+ }
+
+function getId(){
+
+  var order = confirm('Are you sure you have consumed?');
+  if(order){
+    var x = this.id;
+    str = x+"";
+    str = str.charAt(str.length-1)
+    console.log(str)
+    var valstr=document.getElementById(`middle-col${str}`).innerHTML;
+    var valint= parseInt(valstr);
+    console.log(valint)
+    valint-=1;
+    var arr = JSON.parse(localStorage.getItem('data-items'));
+    console.log(arr)
+    if(valint==0){
+  
+      arr.splice(parseInt(str),1);    
+  
+    }else{
+      arr[parseInt(str)].qty = valint;
+    }
+    localStorage.setItem('data-items', JSON.stringify(arr));
+    window.location.reload();
+  }
+ 
+}
 
 function clearStorage(){
 
@@ -144,3 +174,4 @@ function clearStorage(){
   }
 
 }
+

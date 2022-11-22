@@ -116,10 +116,6 @@ body {
   background-color: white;
 }
 
-.red {
-  background-color: #FF5757;
-}
-
 .clearBtn {
   color: White;
   padding: 1rem;
@@ -130,5 +126,9 @@ body {
   border-radius: 10px;
   outline: none;
   border: none;
+  cursor: pointer;
+}
+
+.rmvqty {
   cursor: pointer;
 }/*# sourceMappingURL=styles.css.map */
